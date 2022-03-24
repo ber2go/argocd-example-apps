@@ -6,8 +6,7 @@ metadata:
 
 spec:
   rules:
-  - host: hello-world.rancher.localhost
-    http:
+  - http:
       paths:
       - path: /hello-world-one(/|$)(.*)
         pathType: Prefix
