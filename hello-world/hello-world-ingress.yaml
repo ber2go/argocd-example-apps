@@ -2,8 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hello-world-ingress
-  namespace: hello-world-app
-  
+  namespace: hello-world
+
 spec:
   rules:
   - http:
