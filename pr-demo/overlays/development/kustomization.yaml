@@ -1,0 +1,25 @@
+resources:
+- ../../base
+
+namespace: development
+
+patchesJson6902:
+- target:
+    version: v1
+    kind: Ingress
+    name: hello-world-ingress
+  patch: |-
+    - op: replace
+      path: /spec/rules/0/host
+      value: "development.local-dev.me"
+
+patches: 
+- target:
+    version: v1
+    kind: Deployment
+    name: aks-helloworld
+  patch: |-
+    - op: replace
+      path: /spec/template/spec/containers/0/env/0/value
+      value: "Development Environment"
+  
