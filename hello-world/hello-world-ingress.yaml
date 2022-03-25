@@ -29,18 +29,17 @@
 #             port:
 #               number: 80
 
-              
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: simpleingressroute
+  name: hello-world-ingress
   namespace: default
 spec:
-  entryPoints:
-    - web
   routes:
-  - match: Host(`localhost`)
-    kind: Rule
+  - kind: Rule
+    match: (Host('hello-world.localhost') && Path('/hello-world-one'))
     services:
-    - name: aks-helloworld-one
+    - kind: Service
+      name: aks-helloworld-one
+      namespace: default
       port: 80
