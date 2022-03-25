@@ -10,27 +10,23 @@ spec:
       port:
         number: 80
   rules:
-  - host: hello-world.localdev.me
+  - host: hello-world-one.localdev.me
     http:
       paths:
-      - path: /hello-world-one(/|$)(.*)
+      - path: "/"
         pathType: Prefix
         backend:
           service:
             name: aks-helloworld-one
             port:
               number: 80
-      - path: /hello-world-two(/|$)(.*)
+  - host: hello-world-two.localdev.me
+    http:
+      paths:
+      - path: "/"
         pathType: Prefix
         backend:
           service:
             name: aks-helloworld-two
-            port:
-              number: 80
-      - path: /(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: aks-helloworld-one
             port:
               number: 80
