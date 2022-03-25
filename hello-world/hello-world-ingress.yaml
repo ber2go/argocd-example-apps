@@ -37,7 +37,7 @@ metadata:
 spec:
   routes:
   - kind: Rule
-    match: (Host('hello-world.localhost') && Path('/hello-world-one'))
+    match: (Host(`hello-world.localhost`) && Path(`/hello-world-one`))
     services:
     - kind: Service
       name: aks-helloworld-one
