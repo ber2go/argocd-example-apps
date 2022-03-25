@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: hello-world-ingress
 spec:
+  ingressClassName: nginx
   rules:
   - host: hello-world.localdev
     http:
