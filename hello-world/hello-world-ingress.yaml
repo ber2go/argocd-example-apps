@@ -29,23 +29,19 @@
 #             port:
 #               number: 80
 
-kind: Ingress
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
   name: hello-world-ingress
-  annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web
-
+  namespace: default
 spec:
-  rules:
-    - host: hello-world.localhost
-      http:
-        paths:
-          - path: /hello-world-one(/|$)(.*)
-            backend:
-              serviceName: aks-helloworld-one
-              servicePort: 80
-          - path: /hello-world-two(/|$)(.*)
-            backend:
-              serviceName: aks-helloworld-two
-              servicePort: 80
+  entryPoints:
+    - web
+  routes:
+  - kind: Rule
+    match: (Host(`hello-world.localhost`) && Path(`/hello-world-one`))
+    services:
+    - kind: Service
+      name: aks-helloworld-one
+      namespace: default
+      port: 80
