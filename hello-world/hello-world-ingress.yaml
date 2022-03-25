@@ -4,7 +4,8 @@ metadata:
   name: hello-world-ingress
 spec:
   rules:
-  - http:
+  - host: hello-world.localdev
+    http:
       paths:
       - path: /hello-world-one(/|$)(.*)
         pathType: Prefix
