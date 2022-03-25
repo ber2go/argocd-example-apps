@@ -35,11 +35,12 @@ metadata:
   name: hello-world-ingress
   namespace: default
 spec:
+  entryPoints:
+    - web
   routes:
   - kind: Rule
     match: (Host(`hello-world.localhost`) && Path(`/hello-world-one`))
     services:
     - kind: Service
       name: aks-helloworld-one
-      namespace: default
       port: 80
