@@ -1,32 +1,46 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: hello-world-ingress
+# spec:
+#   rules:
+#   - host: localhost
+#     http:
+#       paths:
+#       - path: /hello-world-one(/|$)(.*)
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: aks-helloworld-one
+#             port:
+#               number: 80
+#       - path: /hello-world-two(/|$)(.*)
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: aks-helloworld-two
+#             port:
+#               number: 80
+#       - path: /(.*)
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: aks-helloworld-one
+#             port:
+#               number: 80
+
+              
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
-  name: hello-world-ingress
-  annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web
+  name: simpleingressroute
+  namespace: default
 spec:
-  rules:
-  - host: localhost
-    http:
-      paths:
-      - path: /hello-world-one(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: aks-helloworld-one
-            port:
-              number: 80
-      - path: /hello-world-two(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: aks-helloworld-two
-            port:
-              number: 80
-      - path: /(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: aks-helloworld-one
-            port:
-              number: 80
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`your.example.com`)
+    kind: Rule
+    services:
+    - name: aks-helloworld-one
+      port: 80
