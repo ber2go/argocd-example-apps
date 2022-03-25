@@ -4,11 +4,6 @@ metadata:
   name: hello-world-ingress
 spec:
   ingressClassName: nginx
-  defaultBackend:
-    service:
-      name: aks-helloworld-one
-      port:
-        number: 80
   rules:
   - host: hello-world-one.localdev.me
     http:
