@@ -39,7 +39,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`your.example.com`)
+  - match: Host(`localhost`)
     kind: Rule
     services:
     - name: aks-helloworld-one
