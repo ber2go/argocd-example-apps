@@ -11,7 +11,7 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /spec/rules/0/host
-      value: "development.local-dev.me"
+      value: "development.localdev.me"
 
 patches: 
 - target:
