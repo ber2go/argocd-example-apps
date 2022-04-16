@@ -3,6 +3,10 @@ resources:
 
 namespace: development
 
+images:
+  - name: aks-helloworld
+    image: docker.io/eubertgomicrosoft/docker-gs-ping:v1
+
 patchesJson6902:
 - target:
     version: v1
