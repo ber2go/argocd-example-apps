@@ -17,7 +17,7 @@ spec:
       - name: aks-helloworld
         image: mcr.microsoft.com/azuredocs/aks-helloworld:v1
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
         - name: TITLE
           value: "AKS Ingress Demo"
