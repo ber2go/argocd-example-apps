@@ -5,7 +5,8 @@ namespace: development
 
 images:
   - name: aks-helloworld
-    image: docker.io/eubertgomicrosoft/docker-gs-ping:v1
+    newName: docker.io/eubertgomicrosoft/docker-gs-ping
+    newTag: v1
 
 patchesJson6902:
 - target:
