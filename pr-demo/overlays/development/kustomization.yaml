@@ -4,9 +4,9 @@ resources:
 namespace: development
 
 images:
-  - name: aks-helloworld
-    newName: docker.io/eubertgomicrosoft/docker-gs-ping
-    newTag: v1
+- name: aks-helloworld
+  newName: docker.io/eubertgomicrosoft/docker-gs-ping
+  newTag: v1
 
 patchesJson6902:
 - target:
