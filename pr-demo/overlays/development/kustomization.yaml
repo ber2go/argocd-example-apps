@@ -4,7 +4,7 @@ resources:
 namespace: development
 
 images:
-- name: aks-helloworld
+- name: mcr.microsoft.com/azuredocs/aks-helloworld
   newName: docker.io/eubertgomicrosoft/docker-gs-ping
   newTag: v1
 
