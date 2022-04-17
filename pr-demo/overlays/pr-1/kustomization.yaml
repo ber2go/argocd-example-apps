@@ -4,9 +4,9 @@ resources:
 namespace: pr-1
 
 images:
-- name: mcr.microsoft.com/azuredocs/aks-helloworld
+- name: docker.io/eubertgomicrosoft/docker-gs-ping
   newName: docker.io/eubertgomicrosoft/docker-gs-ping
-  newTag: v2
+  newTag: v1
 
 patchesJson6902:
 - target:
