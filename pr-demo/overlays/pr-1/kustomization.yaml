@@ -14,7 +14,7 @@ patchesJson6902:
     kind: Ingress
     name: hello-world-ingress
   patch: |-
-    - op: add
+    - op: replace
       path: /spec/rules/0/host
       value: "pr-1.localdev.me"
 
