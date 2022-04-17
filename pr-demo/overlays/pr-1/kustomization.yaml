@@ -1,7 +1,7 @@
 resources:
 - ../../base
 
-namespace: development
+namespace: pr-1
 
 images:
 - name: mcr.microsoft.com/azuredocs/aks-helloworld
@@ -14,7 +14,7 @@ patchesJson6902:
     kind: Ingress
     name: hello-world-ingress
   patch: |-
-    - op: replace
+    - op: add
       path: /spec/rules/0/host
       value: "pr-1.localdev.me"
 
